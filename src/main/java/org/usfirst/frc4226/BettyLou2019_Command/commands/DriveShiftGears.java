@@ -7,6 +7,8 @@
 
 package org.usfirst.frc4226.BettyLou2019_Command.commands;
 
+import org.usfirst.frc4226.BettyLou2019_Command.Robot;
+
 import edu.wpi.first.wpilibj.command.InstantCommand;
 
 /**
@@ -25,6 +27,11 @@ public class DriveShiftGears extends InstantCommand {
   // Called once when the command executes
   @Override
   protected void initialize() {
+    if(Robot.driveTrain.my_GetIsCurrentGearHigh()){
+      Robot.driveTrain.shiftLow();
+    }else{
+      Robot.driveTrain.shiftHigh();
+    }
   }
 
 }
