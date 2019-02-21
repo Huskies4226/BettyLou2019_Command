@@ -20,8 +20,6 @@ public class Elevator_To_Setpoint extends Command {
 
     private double m_setpoint = 0.0;
    
-
-   
     public Elevator_To_Setpoint(double setpoint) {
         requires(Robot.elevator);
         m_setpoint = setpoint;

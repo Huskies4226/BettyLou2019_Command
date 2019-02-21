@@ -50,8 +50,7 @@ public class DriveWithJoySticks extends Command {
         double rightSpeed = Robot.oi.diverStick.getRawAxis(5) * -1;
         double rotation = Robot.oi.coDiverStick.getRawAxis(4);
         
-        boolean driverMode = SmartDashboard.getBoolean("Diver Mode Archade", true);
-        if(!driverMode){
+        if(!Robot.driveTrain.my_getDriveMode()){
             Robot.driveTrain.my_DriveTank(leftSpeed, rightSpeed);
         }else{
             Robot.driveTrain.my_DriveArchade(leftSpeed, rotation);

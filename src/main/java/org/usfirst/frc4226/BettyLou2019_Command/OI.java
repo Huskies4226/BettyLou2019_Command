@@ -85,10 +85,7 @@ public class OI {
         
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
-        
-        //Put a Driver Mode Switch on the smart Dashboard
-        SmartDashboard.putBoolean("Diver Mode Archade", true);
-        
+        SmartDashboard.putData("Drive Mode", new DriveModeToggle());
     }
 
     private void setUpDriverStick() {
