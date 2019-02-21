@@ -11,6 +11,8 @@
 
 package org.usfirst.frc4226.BettyLou2019_Command.commands;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.usfirst.frc4226.BettyLou2019_Command.Robot;
 
 /**
@@ -46,8 +48,15 @@ public class DriveWithJoySticks extends Command {
        
         double leftSpeed = Robot.oi.diverStick.getRawAxis(1) * -1;
         double rightSpeed = Robot.oi.diverStick.getRawAxis(5) * -1;
-        Robot.driveTrain.my_DriveTank(leftSpeed, rightSpeed);
-
+        double rotation = Robot.oi.coDiverStick.getRawAxis(4);
+        
+        boolean driverMode = SmartDashboard.getBoolean("Diver Mode Archade", true);
+        if(!driverMode){
+            Robot.driveTrain.my_DriveTank(leftSpeed, rightSpeed);
+        }else{
+            Robot.driveTrain.my_DriveArchade(leftSpeed, rotation);
+        }
+      
     }
 
     // Make this return true when this Command no longer needs to run execute()
