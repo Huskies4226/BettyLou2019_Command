@@ -111,5 +111,9 @@ public class DriveTrain extends Subsystem {
     public void my_DriveTank(double leftSpeed, double rightSpeed) {
         differential_Drive_1.tankDrive(leftSpeed, rightSpeed, true);
     }
+
+    public void my_DriveArchade(double xSpeed, double zRotation) {
+        differential_Drive_1.arcadeDrive(xSpeed, zRotation, true);
+    }
 }
 
